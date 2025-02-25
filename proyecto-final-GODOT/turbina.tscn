@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1egiaqf33lut"]
+
+[ext_resource type="Shader" path="res://shader/uv_scroll_tut.tres" id="1_po30k"]
+[ext_resource type="Texture2D" uid="uid://cou4peya0bh0e" path="res://materials/Cascada/assets/texture/waterfall_textures/waterfall_texture_colored.png" id="2_ye2up"]
+[ext_resource type="PackedScene" uid="uid://b8xfr8l1d4xua" path="res://assets/hidro_electrica.tscn" id="3_u2r13"]
+[ext_resource type="PackedScene" uid="uid://b7tgti1wp0b0g" path="res://assets/mesh/water_tut.glb" id="4_7uqx0"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4bgya"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nryjh"]
+render_priority = 0
+shader = ExtResource("1_po30k")
+shader_parameter/scroll_dir = Vector2(0, -0.25)
+shader_parameter/main_texture = ExtResource("2_ye2up")
+
+[node name="MainEz" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("PlaneMesh_4bgya")
+surface_material_override/0 = SubResource("ShaderMaterial_nryjh")
+
+[node name="HidroElectrica" parent="." instance=ExtResource("3_u2r13")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05153, 0.884548, 4.80279)
+
+[node name="water_tut" parent="." instance=ExtResource("4_7uqx0")]
+transform = Transform3D(1.01273, -0.0522394, 0, 0.0398789, 1.32663, 0, 0, 0, 1, 1.89476, 1.14203, -0.934643)
+
+[node name="Plane" parent="water_tut" index="0"]
+transform = Transform3D(-2.19628, -0.000310585, -0.107629, 0.0124308, 3.42589, -0.0656293, 0.212932, -0.203204, -1.1063, -0.540135, -0.412307, 4.89142)
+surface_material_override/0 = SubResource("ShaderMaterial_nryjh")
+
+[editable path="water_tut"]

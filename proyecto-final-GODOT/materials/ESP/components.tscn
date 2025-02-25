@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://cserwpl0j3qjs"]
+
+[ext_resource type="PackedScene" uid="uid://dbmuwjq4v7uno" path="res://3d-model.fbx" id="1_rgd3l"]
+
+[node name="3d-model" instance=ExtResource("1_rgd3l")]
+transform = Transform3D(21.0888, 0, 0, 0, 21.0888, 0, 0, 0, 21.0888, 0, 0, 0)
+
+[node name="pin_024" parent="." index="4"]
+transform = Transform3D(-7.2638e-07, 3.04666, 0, 0, 0, 3.04666, 3.04666, 5.44785e-07, 0, -0.0102183, 0.01315, -0.0050737)
+
+[node name="IC_Skt28_001" parent="." index="28"]
+transform = Transform3D(0, -1.162, 0, 0, 0, 1.162, -1.162, 0, 0, -0.0140445, 0.0202527, 0.0249107)
+
+[node name="1mm90degree_join#6_011" parent="." index="35"]
+transform = Transform3D(0, 0.77, 6.04486e-17, -0.77, 0, -1.81346e-16, -1.81346e-16, -6.04486e-17, 0.77, 0.0621915, 0.0197137, 0.0520725)
+
+[node name="1mm90degree_join#1_005" parent="." index="36"]
+transform = Transform3D(0, -0.77, -4.58956e-08, -0.77, 0, 0, 0, 4.58956e-08, -0.77, 0.0579102, 0.0197205, 0.0520725)
+
+[node name="DIL28_001" parent="." index="45"]
+transform = Transform3D(-2.77041e-07, 1.18059, 0, 0, 0, 1.162, 1.162, 2.11105e-07, 0, -0.0140989, 0.024494, 0.0244334)
+
+[node name="Small Cap_001" parent="." index="48"]
+transform = Transform3D(-2.38419e-07, 1, 0, 0, 0, 1, 1, 1.78814e-07, 0, -0.0343911, 0.0490417, -0.00207895)
+
+[node name="3-Digit-7-Seg_001" parent="." index="77"]
+transform = Transform3D(-1, 5.6426e-07, 3.4106e-13, 0, 5.36442e-07, -1, -5.6426e-07, -1, -5.96046e-07, 0.0230089, 0.0055, -0.0570403)
+
+[node name="BV_PCB_001" parent="." index="78"]
+transform = Transform3D(-2.38419e-07, 1, 0, 0, 0, 1, 1, 1.78814e-07, 0, -0.0562448, 0.0089, 0)

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs5mhh0t7wo37"]
+
+[ext_resource type="PackedScene" uid="uid://d2cpfsufjh7ka" path="res://materials/cables_untextured_fbx.fbx" id="1_5ewq3"]
+
+[node name="cables_untextured_fbx" instance=ExtResource("1_5ewq3")]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8xfr8l1d4xua"]
+
+[ext_resource type="PackedScene" path="res://assets/motor_fbx.tscn" id="1_w0hei"]
+[ext_resource type="Script" path="res://assets/player_camera.gd" id="2_laepb"]
+[ext_resource type="Shader" path="res://assets/water.tres" id="3_gbfxp"]
+[ext_resource type="ArrayMesh" uid="uid://cf3ds6wqepmk1" path="res://assets/turbine.obj" id="4_60psd"]
+[ext_resource type="Script" path="res://assets/turbine.gd" id="5_b7onh"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1sksl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmiu2"]
+render_priority = 0
+shader = ExtResource("3_gbfxp")
+
+[node name="HidroElectrica" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.719503, -0.0245914, -0.00164461)
+
+[node name="MotorFBX" parent="." instance=ExtResource("1_w0hei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0620229, 2.38419e-07, 0.135172)
+
+[node name="Player" type="Node3D" parent="."]
+
+[node name="PlayerCamera" type="Camera3D" parent="Player"]
+transform = Transform3D(-0.279454, 0.653622, -0.703338, 0.241296, 0.756821, 0.607452, 0.929345, 4.26047e-05, -0.369213, -5.24452, 3.85533, -2.9938)
+script = ExtResource("2_laepb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("PlaneMesh_1sksl")
+surface_material_override/0 = SubResource("ShaderMaterial_lmiu2")
+
+[node name="Turbine" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.295213, 0, 0, 0, 0.308977, 2.77715, 0.263545, -0.0921698)
+mesh = ExtResource("4_60psd")
+script = ExtResource("5_b7onh")

@@ -1,0 +1,136 @@
+[gd_scene load_steps=18 format=3 uid="uid://om5a0k2rlehw"]
+
+[ext_resource type="PackedScene" uid="uid://gmc2vmxben" path="res://materials/fish-tank/source/New folder (3)/New folder (3)/s.obj" id="1_82gv8"]
+[ext_resource type="PackedScene" uid="uid://f8fnwcjdrr8j" path="res://materials/Bomba de Agua/ImageToStl.com_water pump 12v (2).obj" id="2_o4iwn"]
+[ext_resource type="PackedScene" uid="uid://4qrj2sppthbx" path="res://scenes/Placa y ESP32 TODO.tscn" id="4_1g2bi"]
+[ext_resource type="PackedScene" uid="uid://ud81n24gkhhk" path="res://materials/LED_2.fbx" id="5_8y1js"]
+[ext_resource type="ArrayMesh" uid="uid://cf3ds6wqepmk1" path="res://assets/turbine.obj" id="6_kjjdo"]
+[ext_resource type="PackedScene" uid="uid://s6a2pou8dxuq" path="res://materials/Smartphone.fbx" id="6_n4ojq"]
+[ext_resource type="Script" path="res://rigid_body_3d.gd" id="8_8awrk"]
+[ext_resource type="PackedScene" path="res://assets/motor_fbx.tscn" id="9_ms3jf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0v6x"]
+albedo_color = Color(0.623354, 0.462103, 0.282647, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3tuac"]
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_ppy72"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_n6vmf"]
+
+[sub_resource type="Skin" id="Skin_o052p"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_npknu"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_785u1"]
+direction = Vector3(0, -1, 0)
+spread = 3.0
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+color = Color(0.219608, 0.262745, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_btyo2"]
+uv2_padding = 10.0
+radius = 0.3
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j468m"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.142249, 0, -0.989831, 0, 1, 0, 0.989831, 0, 0.142249, 0, 21.0308, 26.4563)
+
+[node name="Embase" parent="." instance=ExtResource("1_82gv8")]
+transform = Transform3D(1, 0, 0, 0, 0.583613, 0, 0, 0, 1.53293, -3.08083, -6.64669, -73.4241)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Embase"]
+transform = Transform3D(-0.0270576, -4.58984, 0, -0.00521822, 0.00024544, -59.3986, 1.62489, -0.0764292, -0.190755, 14.2551, 44.0519, 49.4441)
+material_override = SubResource("StandardMaterial3D_l0v6x")
+mesh = SubResource("BoxMesh_3tuac")
+
+[node name="Bomba de Agua" parent="." instance=ExtResource("2_o4iwn")]
+transform = Transform3D(-0.000813996, 0.157027, 0.00110997, 0, -0.00110999, 0.157029, 0.157031, 0.000813975, 5.75374e-06, 20.6141, 4.76861, 5.24592)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0100155, -7.57305, 0, 0.601461, -0.126106, 0, 0, 0, 35.6121, 21.1379, 17.9162, 22.699)
+material_override = SubResource("StandardMaterial3D_l0v6x")
+mesh = SubResource("BoxMesh_3tuac")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0265823, -4.59119, -3.25722e-11, 1.59615, -0.0764423, -0.222171, 0.0255202, -0.00122221, 13.8956, 11.1216, 37.0726, 8.35083)
+material_override = SubResource("StandardMaterial3D_l0v6x")
+mesh = SubResource("BoxMesh_3tuac")
+
+[node name="esp32todo" parent="." instance=ExtResource("4_1g2bi")]
+transform = Transform3D(0.208043, 0, 6.278, 0, 6.28145, 0, -6.278, 0, 0.208043, 39.9912, -0.0169611, 15.7797)
+
+[node name="LED_2" parent="." instance=ExtResource("5_8y1js")]
+transform = Transform3D(-1.76327, 0, 127.23, 0, 127.242, 0, -127.23, 0, -1.76327, 38.2315, 1.85301, 36.0503)
+
+[node name="Smartphone" parent="." instance=ExtResource("6_n4ojq")]
+transform = Transform3D(194.956, 15.9306, -107.765, -0.174471, 220.971, 32.35, 108.936, -28.1561, 192.912, 71.8041, -11.2039, 8.19996)
+
+[node name="TUbos" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TUbos"]
+transform = Transform3D(0.0925443, -4.9089, 0, 0.995709, 0.456249, 0, 0, 0, 1, 13.4909, 4.89837, 5.82703)
+mesh = SubResource("TubeTrailMesh_ppy72")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TUbos"]
+transform = Transform3D(1.02479, -7.40866e-07, 9.61395e-09, -1.47907e-09, 15.0976, 0, -1.25721e-08, 0, 1.02479, 11.3872, 20.5139, 4.14474)
+mesh = SubResource("CylinderMesh_n6vmf")
+skin = SubResource("Skin_o052p")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="TUbos"]
+transform = Transform3D(0.0925443, -0.127713, -0.995085, 0.995709, 0.01187, 0.0924864, 7.45058e-09, -3.62224, 0.0353878, 11.4024, 5.09248, 4.05014)
+mesh = SubResource("TubeTrailMesh_ppy72")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="TUbos"]
+transform = Transform3D(0.0925443, -0.398642, -0.995272, 0.995709, 0.0370512, 0.0925037, 7.45058e-09, -13.5134, 0.0296139, 11.5769, 35.72, 10.0344)
+mesh = SubResource("TubeTrailMesh_ppy72")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="TUbos"]
+transform = Transform3D(0.128091, 0.592196, 0.989961, 0.904914, -4.11892, -0.0920102, 0.405863, 8.99666, -0.107288, 11.9876, 33.8744, 20.5811)
+mesh = SubResource("TubeTrailMesh_ppy72")
+
+[node name="MotorFBX" parent="." instance=ExtResource("9_ms3jf")]
+transform = Transform3D(-3.15721, 0, 0.216621, 0, 3.16464, 0, -0.216621, 0, -3.15721, 20.8874, 18.2391, 26.2095)
+
+[node name="Agua" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="Agua" groups=["agua"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29673, 0, 3.48784)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Agua/Area3D" groups=["agua"]]
+transform = Transform3D(7.60107, 0, 0, 0, 7.60107, 0, 0, 0, 7.60107, 8.6578, 27.4667, 26.2526)
+shape = SubResource("CylinderShape3D_npknu")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Agua/Area3D" groups=["agua"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.77981, 31.7049, 22.1499)
+amount = 1000
+process_material = SubResource("ParticleProcessMaterial_785u1")
+draw_pass_1 = SubResource("SphereMesh_btyo2")
+
+[node name="Turbina" type="Node3D" parent="." groups=["agua"]]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Turbina" groups=["agua"]]
+disable_mode = 2
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("8_8awrk")
+velocidad_rotacion = null
+
+[node name="Turbine" type="MeshInstance3D" parent="Turbina/RigidBody3D" groups=["agua"]]
+transform = Transform3D(2.32502, 0, 0, 0, 0.686376, 0, 0, 0, 0.718378, 12.4982, 19.2688, 25.9482)
+mesh = ExtResource("6_kjjdo")
+skeleton = NodePath("../../../TUbos")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Turbina/RigidBody3D" groups=["agua"]]
+transform = Transform3D(9.35802, 0, 0, 0, 9.35802, 0, 0, 0, 9.35802, 11.2078, 18.7824, 25.9482)
+shape = SubResource("SphereShape3D_j468m")
+
+[connection signal="body_entered" from="Agua/Area3D" to="Turbina/RigidBody3D/Turbine" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Agua/Area3D" to="Turbina/RigidBody3D" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Turbina/RigidBody3D" to="Turbina/RigidBody3D" method="_on_body_entered"]

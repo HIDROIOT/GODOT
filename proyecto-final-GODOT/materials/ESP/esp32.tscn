@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjltiq3br2iyq"]
+
+[ext_resource type="PackedScene" uid="uid://xsfoc8y6rcfg" path="res://Arduino Mega.fbx" id="1_3p83m"]
+
+[node name="Arduino Mega" instance=ExtResource("1_3p83m")]
+
+[node name="Cube_017" parent="." index="0"]
+transform = Transform3D(1.28558, 0, 0, 0, -1.38811e-07, -10.9717, 0, 1.16443, -1.30793e-06, -0.0209728, 0.174235, -0.552797)
+
+[node name="Cube_016" parent="." index="1"]
+transform = Transform3D(1.28558, 0, 0, 0, -1.38811e-07, -7.26341, 0, 1.16443, -8.65865e-07, -0.0209728, 0.174235, -0.63747)
+
+[node name="Cube_015" parent="." index="2"]
+transform = Transform3D(1.28558, 0, 0, 0, -1.38811e-07, -10.9717, 0, 1.16443, -1.30793e-06, -0.107802, 0.174235, -0.63747)
+
+[node name="Cube_013" parent="." index="3"]
+transform = Transform3D(1.28558, 0, 0, 0, -1.38811e-07, -10.9717, 0, 1.16443, -1.30793e-06, -0.107802, 0.174235, -0.552797)
+
+[node name="Cube_012" parent="." index="4"]
+transform = Transform3D(1.28558, 0, 0, 0, -1.38811e-07, -10.9717, 0, 1.16443, -1.30793e-06, 0.0705381, 0.174235, -0.552797)
+
+[node name="Plane" parent="." index="5"]
+visible = false
+
+[node name="Circle" parent="." index="52"]
+transform = Transform3D(-5.0767, -7.21443e-14, -6.36111e-06, -4.4382e-07, 9.07785e-07, 72.7626, 0, 5.0767, -8.67398e-06, -0.82019, 0.0818733, 1.87595)
+
+[node name="Cube_018" parent="." index="53"]
+transform = Transform3D(10.8132, 0, 0, 0, -1.25104e-06, -3.71653, 0, 10.4945, -4.43045e-07, -0.816906, 0.0629141, 1.88294)
+
+[node name="Cube_014" parent="." index="54"]
+transform = Transform3D(1.28558, 0, 0, 0, -1.38811e-07, -10.9717, 0, 1.16443, -1.30793e-06, 0.0705381, 0.174235, -0.63747)
+
+[node name="Cube_011" parent="." index="55"]
+transform = Transform3D(13.3578, 0, 0, 0, -9.90136e-07, -2.717, 0, 8.30587, -3.23892e-07, -0.0224669, 0.0896796, -0.597367)
+
+[node name="Cube_006" parent="." index="60"]
+visible = false
+
+[node name="Lamp" parent="." index="67"]
+visible = false
+
+[node name="Camera" parent="." index="68"]
+visible = false
